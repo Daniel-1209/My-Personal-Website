@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 
 import Home from "./views/Home";
+import YoGiHo from "./views/YoGiHo";
 const App = () => {
   // return (
   //   <div className="App">
@@ -20,7 +21,7 @@ const App = () => {
   //     </header>
   //   </div>
   // );
-  return <Home />;
+  return <YoGiHo />;
 };
 
 export default App;
