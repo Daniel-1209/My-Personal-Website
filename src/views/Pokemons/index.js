@@ -253,6 +253,8 @@ const Pokemons = () => {
   const [pokemons, setPokemons] = useState(null);
   const [pagination, setPagination] = useState(0);
   const [loadingImage, setLoadingImage] = useState(false);
+  const [pokemonName, setPokemonName] = useState("");
+  const [haveError, setHaveError] = useState(true);
 
   const styles = myStyles();
 
@@ -285,6 +287,28 @@ const Pokemons = () => {
     }
   };
 
+  const handdleSearch = async (name) => {
+    console.log("Buscando");
+    try {
+      const config = {
+        method: "get",
+        url: `https://pokeapi.co/api/v2/pokemon/${name !== "" ? name : "uu"}`,
+        headers: {},
+      };
+      const response = await axios(config);
+      // setPokemons(response.data.results);
+      console.log(response);
+      setHaveError(false);
+      setPokemonNow(response.data);
+      setPokemonName("");
+    } catch (error) {
+      console.log("error al buscar");
+      setHaveError(true);
+      setPokemonNow({ name: "Error" });
+      setPokemonName("");
+    }
+  };
+
   useEffect(() => {
     const hola = async () => {
       try {
@@ -314,42 +338,56 @@ const Pokemons = () => {
               <>
                 {pokemonNow !== null ? (
                   <Box className={styles.boxDetailPokemon}>
-                    <img
-                      width={200}
-                      style={{ display: "none" }}
-                      onLoad={() => setLoadingImage(false)}
-                      src={
-                        pokemonNow?.sprites?.other?.dream_world?.front_default
-                      }
-                      alt="Pokemonpng"
-                    />
-                    {loadingImage ? (
-                      <p style={{ color: "white" }}>Cargado Imagen....</p>
+                    {haveError ? (
+                      <p style={{color:'white', textAlign:'center'}}> Error al buscar tu pokemon </p>
                     ) : (
-                      <img
-                        height={200}
-                        onLoad={() => setLoadingImage(false)}
-                        src={
-                          pokemonNow?.sprites?.other?.dream_world?.front_default
-                        }
-                        alt="Pokemonpng"
-                      />
+                      <>
+                        <img
+                          width={200}
+                          style={{ display: "none" }}
+                          onLoad={() => setLoadingImage(false)}
+                          src={
+                            pokemonNow?.sprites?.other?.dream_world
+                              ?.front_default
+                          }
+                          alt="Pokemonpng"
+                        />
+                        {loadingImage ? (
+                          <p style={{ color: "white" }}>Cargado Imagen....</p>
+                        ) : (
+                          <img
+                            height={200}
+                            onLoad={() => setLoadingImage(false)}
+                            src={
+                              pokemonNow?.sprites?.other?.dream_world
+                                ?.front_default
+                            }
+                            alt="Pokemonpng"
+                          />
+                        )}
+                        <Typography
+                          align="center"
+                          fontWeight={600}
+                          color="white"
+                        >
+                          Name:{" "}
+                          {pokemonNow?.name[0].toUpperCase() +
+                            pokemonNow?.name.substring(1)}
+                        </Typography>
+                        <Typography align="center" color="white">
+                          Abilities:{" "}
+                          {pokemonNow.abilities.map(
+                            (e, i) => `${e.ability.name},`
+                          )}
+                        </Typography>
+                        <Typography align="center" color="white">
+                          Estatus:{" "}
+                          {pokemonNow.stats.map(
+                            (e, i) => `${e.stat.name} => ${e.base_stat} \n`
+                          )}
+                        </Typography>
+                      </>
                     )}
-                    <Typography align="center" fontWeight={600} color="white">
-                      Name:{" "}
-                      {pokemonNow.forms[0].name[0].toUpperCase() +
-                        pokemonNow.forms[0].name.substring(1)}
-                    </Typography>
-                    <Typography align="center" color="white">
-                      Abilities:{" "}
-                      {pokemonNow.abilities.map((e, i) => `${e.ability.name},`)}
-                    </Typography>
-                    <Typography align="center" color="white">
-                      Estatus:{" "}
-                      {pokemonNow.stats.map(
-                        (e, i) => `${e.stat.name} => ${e.base_stat} \n`
-                      )}
-                    </Typography>
                   </Box>
                 ) : (
                   <Box
@@ -364,6 +402,8 @@ const Pokemons = () => {
                     {selectIndex === 0 ? (
                       <CssTextField
                         autoFocus
+                        value={pokemonName}
+                        onChange={(e) => setPokemonName(e.target.value)}
                         label="Buscar Pokemon"
                         id="custom-css-outlined-input"
                       />
@@ -471,15 +511,27 @@ const Pokemons = () => {
 
         {/* Buttons A B */}
         <Box className={styles.boxABButtons}>
-          <button
-            onClick={() => {
-              setLoadingImage(true);
-              handelPokemon(pokemons[selectIndex - 1]?.url);
-            }}
-            className={styles.buttonA}
-          >
-            A
-          </button>
+          {selectIndex === 0 ? (
+            <button
+              onClick={() => {
+                handdleSearch(pokemonName);
+              }}
+              className={styles.buttonA}
+            >
+              A
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setLoadingImage(true);
+                handelPokemon(pokemons[selectIndex - 1]?.url);
+              }}
+              className={styles.buttonA}
+            >
+              A
+            </button>
+          )}
+
           <button
             onClick={() => setPokemonNow(null)}
             className={styles.buttonB}
