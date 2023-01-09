@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
-import { RiWhatsappFill, RiHome8Fill, RiFacebookBoxFill, RiFacebookCircleFill } from "react-icons/ri";
+import { RiWhatsappFill, RiHome8Fill, RiFacebookBoxFill, RiFacebookCircleFill, RiContactsBook2Fill } from "react-icons/ri";
 import {
   IconBrandWhatsapp,
   IconBrandInstagram,
@@ -34,14 +34,14 @@ export const AdvancedBannerTop = () => {
               </a>
             </li>
             <li>
-              <a href="#">
-                <RiHome8Fill /> Hola
+              <a href="#good">
+                <RiContactsBook2Fill /> Sobre Mi
               </a>
             </li>
 
             <li>
               <a href="#">
-                <RiWhatsappFill />Txt
+                <RiWhatsappFill /><span> Whatsapp </span>
               </a>
             </li>
             <li>
