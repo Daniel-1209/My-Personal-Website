@@ -1,16 +1,14 @@
-import React from "react";
-import { Grid, Box } from "@mui/material";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { AdvancedBannerTop } from "./components/Banner";
+import "./root.css";
 
-const Home = () => {
+export default function App() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          Mi Pagina Personal
-        </Grid>
-      </Grid>
-    </Box>
+    <ParallaxProvider>
+      <AdvancedBannerTop />
+      <div className="center full">
+        <h1 className="headline gray">Goodnight.</h1>
+      </div>
+    </ParallaxProvider>
   );
-};
-
-export default Home;
+}

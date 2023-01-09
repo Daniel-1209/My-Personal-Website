@@ -6,7 +6,7 @@ import TicTacToe from "./views/TicTacToe";
 import Calculator from "./views/Calculate";
 
 const App = () => {
-  return <Pokemons />;
+  return <Home />;
 };
 
 export default App;
