@@ -1,5 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
+import perfilImage from "../../../assets/FB_IMG_1673920208879.jpeg";
 import {
   RiWhatsappFill,
   RiHome8Fill,
@@ -34,19 +35,21 @@ export const AdvancedBannerTop = () => {
           Hello World!
         </h3>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={11} sm={6} md={4}>
+          <Grid item xs={11} sm={6} md={4} display='flex' justifyContent="center">
             <Box
               style={{
                 background:
                   "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,1) 100%)",
                 borderRadius: 50,
                 width: "100%",
+                maxWidth: 600,
+                minWidth: 340,
                 padding: 50,
                 boxSizing: "border-box",
               }}
             >
               <img
-                src="https://www.shutterstock.com/image-photo/portrait-young-smiling-caucasian-man-260nw-1491969899.jpg"
+                src={perfilImage}
                 alt="perfil"
                 style={{
                   height: 200,
@@ -69,6 +72,7 @@ export const AdvancedBannerTop = () => {
       </div>
     ),
   };
+
   const headlineTwo = {
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
