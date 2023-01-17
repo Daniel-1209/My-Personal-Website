@@ -1,12 +1,12 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
-import { RiWhatsappFill, RiHome8Fill, RiFacebookBoxFill, RiFacebookCircleFill, RiContactsBook2Fill } from "react-icons/ri";
 import {
-  IconBrandWhatsapp,
-  IconBrandInstagram,
-  IconBrandTwitter,
-  IconBrandSnapchat,
-} from "@tabler/icons";
+  RiWhatsappFill,
+  RiHome8Fill,
+  RiFacebookBoxFill,
+  RiFacebookCircleFill,
+  RiContactsBook2Fill,
+} from "react-icons/ri";
 
 export const AdvancedBannerTop = () => {
   const background = {
@@ -26,11 +26,62 @@ export const AdvancedBannerTop = () => {
     children: (
       <div className="inset-one center-one">
         {/* NavBar */}
-        <Box  style={{ width:'100%'}}>
+        <Box style={{ width: "100%", height: 100 }} />
+        <h3
+          style={{ marginTop: 0, marginBottom: 5 }}
+          className="headline white"
+        >
+          Hello World!
+        </h3>
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={11} sm={6} md={4}>
+            <Box
+              style={{
+                background:
+                  "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,1) 100%)",
+                borderRadius: 50,
+                width: "100%",
+                padding: 50,
+                boxSizing: "border-box",
+              }}
+            >
+              <img
+                src="https://www.shutterstock.com/image-photo/portrait-young-smiling-caucasian-man-260nw-1491969899.jpg"
+                alt="perfil"
+                style={{
+                  height: 200,
+                  width: 200,
+                  display: "block",
+                  borderRadius: "100%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              />
+              <Typography variant="h4" color="white" textAlign="center" mt={4}>
+                Daniel García Mendoza
+              </Typography>
+              <Typography variant="h5" color="white" textAlign="center" mt={3}>
+                Programador Full Stack
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </div>
+    ),
+  };
+  const headlineTwo = {
+    translateY: [0, 30],
+    scale: [1, 1.05, "easeOutCubic"],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: false,
+    children: (
+      <div className="inset-one center-one">
+        {/* NavBar */}
+        <Box style={{ width: "100%" }}>
           <ul className="social-icons">
             <li>
               <a href="#">
-                <RiHome8Fill  /> <span> Inicio </span>
+                <RiHome8Fill /> <span> Inicio </span>
               </a>
             </li>
             <li>
@@ -41,24 +92,18 @@ export const AdvancedBannerTop = () => {
 
             <li>
               <a href="#">
-                <RiWhatsappFill /><span> Whatsapp </span>
+                <RiWhatsappFill />
+                <span> Whatsapp </span>
               </a>
             </li>
             <li>
               <a href="#">
-                <RiFacebookCircleFill />Facebook
+                <RiFacebookCircleFill />
+                Facebook
               </a>
             </li>
           </ul>
         </Box>
-        <h1 className="headline white">Hello World!</h1>
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={4}>
-            <Box style={{ background: "red", height: 100, width: "100%" }}>
-              <Typography>Holaa a todos,</Typography>
-            </Box>
-          </Grid>
-        </Grid>
       </div>
     ),
   };
@@ -80,7 +125,7 @@ export const AdvancedBannerTop = () => {
 
   return (
     <ParallaxBanner
-      layers={[background, foreground, gradientOverlay, headline]}
+      layers={[background, foreground, headline, gradientOverlay, headlineTwo]}
       className="full"
     />
   );
