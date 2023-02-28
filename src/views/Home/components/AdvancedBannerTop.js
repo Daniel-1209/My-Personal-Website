@@ -1,13 +1,7 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
 import perfilImage from "../../../assets/FB_IMG_1673920208879.jpeg";
-import {
-  RiWhatsappFill,
-  RiHome8Fill,
-  RiFacebookBoxFill,
-  RiFacebookCircleFill,
-  RiContactsBook2Fill,
-} from "react-icons/ri";
+import { RiLinkedinBoxFill, RiGithubFill, RiMailFill } from "react-icons/ri";
 
 export const AdvancedBannerTop = () => {
   const background = {
@@ -19,6 +13,7 @@ export const AdvancedBannerTop = () => {
     shouldAlwaysCompleteAnimation: true,
   };
 
+  // Center content
   const headline = {
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
@@ -28,19 +23,32 @@ export const AdvancedBannerTop = () => {
       <div className="inset-one center-one">
         {/* NavBar */}
         <Box style={{ width: "100%", height: 100 }} />
-        <h3
+        {/* <h3
           style={{ marginTop: 0, marginBottom: 5 }}
           className="headline white"
         >
           Hello World!
-        </h3>
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={11} sm={6} md={4} display='flex' justifyContent="center">
+        </h3> */}
+        <Grid
+          container
+          spacing={2}
+          justifyContent="center"
+          alignContent="center"
+        >
+          {/* My perfil */}
+          <Grid
+            item
+            xs={11}
+            sm={6}
+            md={4}
+            display="flex"
+            justifyContent="center"
+          >
             <Box
               style={{
-                background:
-                  "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,1) 100%)",
-                borderRadius: 50,
+                // background:
+                //   "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,0) 100%)",
+                // borderRadius: 50,
                 width: "100%",
                 maxWidth: 600,
                 minWidth: 340,
@@ -60,11 +68,60 @@ export const AdvancedBannerTop = () => {
                   marginRight: "auto",
                 }}
               />
-              <Typography variant="h4" color="white" textAlign="center" mt={4}>
+              <Typography
+                variant="h4"
+                color="white"
+                textAlign="center"
+                fontWeight={600}
+                mt={4}
+              >
                 Daniel García Mendoza
               </Typography>
-              <Typography variant="h5" color="white" textAlign="center" mt={3}>
+              <Typography
+                variant="h5"
+                color="white"
+                textAlign="center"
+                fontWeight={600}
+                mt={3}
+              >
                 Programador Full Stack
+              </Typography>
+            </Box>
+          </Grid>
+          {/* My description */}
+          <Grid
+            item
+            xs={11}
+            sm={6}
+            md={6}
+            display="flex"
+            justifyContent="center"
+          >
+            <Box
+              style={{
+                // background:
+                //   "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,0) 100%)",
+                // borderRadius: 50,
+                width: "100%",
+                padding: 50,
+                boxSizing: "border-box",
+              }}
+            >
+              <Typography
+                variant="h6"
+                mt={1}
+                color="white"
+                fontWeight={600}
+                textTransform="capitalize"
+                textAlign="justify"
+              >
+                Soy un desarrollador full-stack que le fascina la tecnología y
+                los retos de programación, en un lapso de un año he trabajado
+                con tecnologías para el desarrollo y mantenimiento de
+                aplicaciones Web, Android y IOS, así mismo durante mis estudios
+                de bachillerato participe en la Olimpiada Mexicana De
+                Informática (OMI) en la cual obtuve medalla de bronce lo cual me
+                ayudo a fortalecer mi lógica de programación.
               </Typography>
             </Box>
           </Grid>
@@ -73,6 +130,7 @@ export const AdvancedBannerTop = () => {
     ),
   };
 
+  // Nav bar
   const headlineTwo = {
     translateY: [0, 30],
     scale: [1, 1.05, "easeOutCubic"],
@@ -81,31 +139,31 @@ export const AdvancedBannerTop = () => {
     children: (
       <div className="inset-one center-one">
         {/* NavBar */}
-        <Box style={{ width: "100%" }}>
+        <Box sx={{ width: "100%", display: { xs: "none", md: "block" } }}>
           <ul className="social-icons">
             <li>
-              <a href="#">
-                <RiHome8Fill /> <span> Inicio </span>
+              <a href="https://www.linkedin.com/in/daniel12gm/" target="_blank">
+                <RiLinkedinBoxFill /> <span> LinkedIn </span>
               </a>
             </li>
             <li>
-              <a href="#good">
-                <RiContactsBook2Fill /> Sobre Mi
+              <a href="https://github.com/Daniel-1209" target="_blank">
+                <RiGithubFill /> GitHub
               </a>
             </li>
 
             <li>
-              <a href="#">
-                <RiWhatsappFill />
-                <span> Whatsapp </span>
+              <a href="mailto: danielgarciamendoza.204@gmail.com">
+                <RiMailFill />
+                <span> Gmail </span>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#">
                 <RiFacebookCircleFill />
                 Facebook
               </a>
-            </li>
+            </li> */}
           </ul>
         </Box>
       </div>
