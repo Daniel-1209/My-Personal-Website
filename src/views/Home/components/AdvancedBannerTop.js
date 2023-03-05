@@ -51,7 +51,7 @@ export const AdvancedBannerTop = () => {
                 // borderRadius: 50,
                 width: "100%",
                 maxWidth: 600,
-                minWidth: 340,
+                // minWidth: 340,
                 padding: 50,
                 boxSizing: "border-box",
               }}
@@ -139,7 +139,7 @@ export const AdvancedBannerTop = () => {
     children: (
       <div className="inset-one center-one">
         {/* NavBar */}
-        <Box sx={{ width: "100%", display: { xs: "none", md: "block" } }}>
+        <Box sx={{ width: "100%", display: { xs: "none", sm: "block" } }}>
           <ul className="social-icons">
             <li>
               <a href="https://www.linkedin.com/in/daniel12gm/" target="_blank">

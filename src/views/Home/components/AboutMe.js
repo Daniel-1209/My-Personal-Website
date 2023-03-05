@@ -3,59 +3,240 @@ import { Grid, Box, Typography } from "@mui/material";
 import { FaFolder, FaStarHalfAlt, FaMedal } from "react-icons/fa";
 import { IoMdSchool } from "react-icons/io";
 import { MdComputer } from "react-icons/md";
+import Htmlicon from "../../../assets/HtmlIcon.png";
+import Cssicon from "../../../assets/CssIcon.png";
+import JSicon from "../../../assets/JsIcon.png";
+import postmanIcon from "../../../assets/newPostman.png";
+import GoogleCloudIcon from "../../../assets/GoogleCloudicon.png";
 
 const AboutMe = () => {
   return (
-    <div className="center full">
-      <Box className="box">
+    <div className="center full night-sky">
+      <Box
+        style={{
+          display: "block",
+          width: "auto",
+          height: 800,
+          margin: 15,
+          color: "white",
+          // background: "red",
+        }}
+      >
         <Grid container spacing={2}>
-          <Grid item xs={8}>
+          {/* Experience */}
+          <Grid item xs={12} md={8}>
             <Box
-              style={{
-                // background: "blue",
-                padding: 90,
-                boxSizing: "border-box",
-              }}
+              style={
+                {
+                  // background: "blue",
+                  // padding: 90,
+                  // boxSizing: "border-box",
+                }
+              }
             >
-              <FaFolder fontSize={40} />
-              <Typography variant="h2" mt={5}>
-                Sobre Mí
+              <Typography variant="h3" mt={5}>
+                <FaFolder fontSize={40} /> Experiencia Laboral
+              </Typography>
+              <Typography variant="h5" mt={5}>
+                DESARROLLADOR DE SOFTWARE JÚNIOR | WOBZ
+              </Typography>
+              <Typography variant="h6" fontFamily="fantasy">
+                Diciembre 2021 - Febrero 2023 / www.wobz.com.mx
               </Typography>
               <Typography variant="h6" mt={1}>
-                My name is Daniel Garcia Mendoza, I'm a front-end developer
-                based in Lima, Peru. My interest in web development started in
-                2015 when I decided to create a custom simulator for my
-                professional license test with C#. I believe that developing
-                solutions applying best practices is one of the main pillars to
-                obtain the best results. Here are a few technologies I've been
-                working with recently: JavaScript TypeScript PHP Angular React
-                Laravel
+                Fui uno de los primeros desarrolladores en esta empresa en la
+                cual participe para el despliegue de 5 proyectos en el termino
+                de un año junto con mis compañeros, lleve a cargo el desarrollo
+                del frontend y backend de cada aplicación basándome en ReactJS
+                junto con tecnologías como Git, Git Hub, NodeJs, Strapi, Google
+                Cloud y JavaScript.
+                <ul>
+                  <li>
+                    Desarrolle y mantuve sitios web con la ayuda de la librería
+                    ReactJS.
+                  </li>
+                  <li>
+                    Estuve asignado al desarrollo de aplicaciones para
+                    dispositivos android y IOS con React Native.
+                  </li>
+                  <li>
+                    Cree y mantuve API'S para la comunicacion de información
+                    entre componentes.
+                  </li>
+                  <li>
+                    Diseñe modelos de base de datos usando MySQL y Strapi para
+                    el almacenamiento de información.
+                  </li>
+                </ul>
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
-            <Box>
-              <Typography
-                variant="h3"
-                mb={5}
-                justifyContent="center"
-                display="flex"
-                alignItems="center"
-              >
-                Logros
-                <FaStarHalfAlt />
+          {/* Skills */}
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={
+              {
+                // background: "red",
+                // padding: 90,
+                // boxSizing: "border-box",
+                // boxSizing: "border-box",
+              }
+            }
+          >
+            <Box
+              sx={
+                {
+                  // background: "red",
+                  // padding: 90,
+                  // boxSizing: "border-box",
+                  // boxSizing: "border-box",
+                }
+              }
+            >
+              <Typography variant="h3" mt={5}>
+                <FaStarHalfAlt /> Habilidades
               </Typography>
 
               <Typography variant="h5" mb={5}>
-                <IoMdSchool /> Colegion De Bachilleres Terminado
+                <ul>
+                  <li>React Js </li>
+                  <li> React Native </li>
+                  <li> Node Js </li>
+                  <li>Express Js </li>
+                  <li>Java Script </li>
+                  <li>HTML/CSS </li>
+                  <li>MySQL </li>
+                  <li> Google Cloud</li>
+                </ul>
               </Typography>
-              <Typography variant="h5" mb={5}>
-                <MdComputer /> Curso Programación Web Full Stack Por Digital
-                House
-              </Typography>
-              <Typography variant="h5" mb={5}>
-                <FaMedal /> Medalla de Bronce Nivel Nacional En La OMI 2019
-              </Typography>
+              <div class="slider">
+                <div class="slide-track">
+                  <div class="slide">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://www.mementotech.in/assets/images/icons/express.png"
+                      style={{ background: "white", borderRadius: "100%" }}
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img src={Htmlicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src={Cssicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src={JSicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src={GoogleCloudIcon}
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img src={postmanIcon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://www.mementotech.in/assets/images/icons/express.png"
+                      height="100"
+                      style={{ background: "white", borderRadius: "100%" }}
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img src={Htmlicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src={Cssicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img src={JSicon} height="100" width="250" alt="" />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src={GoogleCloudIcon}
+                      height="100"
+                      width="250"
+                      alt=""
+                    />
+                  </div>
+                  <div class="slide">
+                    <img src={postmanIcon} height="100" width="250" alt="" />
+                  </div>
+                </div>
+              </div>
             </Box>
           </Grid>
         </Grid>

@@ -27,7 +27,13 @@ body {
 }
 
 .full {
+  max-width: 2000px;
   height: 100vh;
+  margin: auto;
+}
+.night-sky {
+  background-image:url(../../assets/SkyNight.jpeg);
+  background-size: contain;
 }
 
 .center-one {
@@ -135,4 +141,39 @@ body {
   bottom: -20px;
   border-right: 20px solid #d400d4;
   border-bottom: 20px solid #d400d4;
+}
+
+.slider {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  /* background: blue; */
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider .slide-track {
+  display: flex;
+  animation: scroll 80s linear infinite;
+  width: calc(200px * 28);
+}
+
+.slider .slide {
+  
+  margin-left: 50px;
+}
+
+.slider .slide img {
+  width: 100%;
+  height: 200px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 14));
+  }
 }
