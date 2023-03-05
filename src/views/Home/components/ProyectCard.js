@@ -1,36 +1,37 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-const ProyectCard = () => {
+const ProyectCard = ({ image, title, description }) => {
   return (
     <Box
       sx={{
-        // background: "white",
+        // background: "black",
         borderRadius: 10,
+        marginBottom: 3,
         boxSizing: "border-box",
-        padding: 1,
-        height: 400,
+        padding: 3,
+        height: 450,
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        color:'white',
+        color: "white",
         justifyContent: "space-evenly",
-        boxShadow: '0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe'
+        boxShadow:
+          "0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 1rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe",
       }}
     >
       <Box justifyContent="center" display="flex">
         <img
-          src="https://i.ebayimg.com/images/g/mHYAAOSwOL9hDWSl/s-l1600.jpg"
+          src={image}
           style={{ width: 150, height: 150, borderRadius: "100%" }}
           alt="Imagen Proyecto"
         />
       </Box>
-      <Typography textAlign="center" variant="h5">
-        POKEDEX
+      <Typography textAlign="center" variant="h4" fontFamily="serif">
+        {title}
       </Typography>
       <Typography textAlign="justify" variant="h6">
-        Enciclopedia virtual la cual te provee de información hacerca de cada
-        pokemon que selecciones o búsques.
+        {description}
       </Typography>
     </Box>
   );
