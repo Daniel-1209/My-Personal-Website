@@ -8,15 +8,22 @@ import Cssicon from "../../../assets/CssIcon.png";
 import JSicon from "../../../assets/JsIcon.png";
 import postmanIcon from "../../../assets/newPostman.png";
 import GoogleCloudIcon from "../../../assets/GoogleCloudicon.png";
+import { useParallax } from "react-scroll-parallax";
 
 const AboutMe = () => {
+  const parallax = useParallax({
+    translateX: [-100, 3, "easeOutQuint"],
+  });
+  const parallaxTwo = useParallax({
+    translateX: [300, -3, "easeOutQuint"]
+
+  });
   return (
     <div className="center full night-sky">
       <Box
         style={{
           display: "block",
-          width: "auto",
-          height: 800,
+          minHeight: 800,
           margin: 15,
           color: "white",
           // background: "red",
@@ -24,7 +31,7 @@ const AboutMe = () => {
       >
         <Grid container spacing={2}>
           {/* Experience */}
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} md={8} ref={parallax.ref}>
             <Box
               style={
                 {
@@ -72,19 +79,7 @@ const AboutMe = () => {
             </Box>
           </Grid>
           {/* Skills */}
-          <Grid
-            item
-            xs={12}
-            md={4}
-            sx={
-              {
-                // background: "red",
-                // padding: 90,
-                // boxSizing: "border-box",
-                // boxSizing: "border-box",
-              }
-            }
-          >
+          <Grid item xs={12} md={4} ref={parallaxTwo.ref}>
             <Box
               sx={
                 {
@@ -111,9 +106,9 @@ const AboutMe = () => {
                   <li> Google Cloud</li>
                 </ul>
               </Typography>
-              <div class="slider">
-                <div class="slide-track">
-                  <div class="slide">
+              <div className="slider">
+                <div className="slide-track">
+                  <div className="slide">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
                       height="100"
@@ -121,7 +116,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
                       height="100"
@@ -129,7 +124,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
                       height="100"
@@ -137,7 +132,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://www.mementotech.in/assets/images/icons/express.png"
                       style={{ background: "white", borderRadius: "100%" }}
@@ -146,16 +141,16 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={Htmlicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={Cssicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={JSicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
                       height="100"
@@ -163,7 +158,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src={GoogleCloudIcon}
                       height="100"
@@ -171,10 +166,10 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={postmanIcon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
                       height="100"
@@ -182,7 +177,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
                       height="100"
@@ -190,7 +185,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
                       height="100"
@@ -198,7 +193,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://www.mementotech.in/assets/images/icons/express.png"
                       height="100"
@@ -207,16 +202,16 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={Htmlicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={Cssicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={JSicon} height="100" width="250" alt="" />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
                       height="100"
@@ -224,7 +219,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img
                       src={GoogleCloudIcon}
                       height="100"
@@ -232,7 +227,7 @@ const AboutMe = () => {
                       alt=""
                     />
                   </div>
-                  <div class="slide">
+                  <div className="slide">
                     <img src={postmanIcon} height="100" width="250" alt="" />
                   </div>
                 </div>

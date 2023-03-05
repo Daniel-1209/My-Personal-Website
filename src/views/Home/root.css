@@ -27,12 +27,13 @@ body {
 }
 
 .full {
-  max-width: 2000px;
-  height: 100vh;
+  max-width: 1700px;
+  min-height: 100vh;
+  overflow-x: hidden;
   margin: auto;
 }
 .night-sky {
-  background-image:url(../../assets/SkyNight.jpeg);
+  background-image: url(../../assets/SkyNight.jpeg);
   background-size: contain;
 }
 
@@ -153,6 +154,18 @@ body {
   overflow: hidden;
 }
 
+@media only screen and (max-width: 850px) {
+  .slider {
+    display: block;
+    width: 300px;
+    max-width: 800px;
+    /* background: blue; */
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+}
+
 .slider .slide-track {
   display: flex;
   animation: scroll 80s linear infinite;
@@ -160,7 +173,6 @@ body {
 }
 
 .slider .slide {
-  
   margin-left: 50px;
 }
 
