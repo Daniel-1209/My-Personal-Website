@@ -27,7 +27,7 @@ const ProyectCard = ({ image, title, description }) => {
           alt="Imagen Proyecto"
         />
       </Box>
-      <Typography textAlign="center" variant="h4" fontFamily="serif">
+      <Typography textAlign="center" variant="h5" fontWeight={600} fontFamily="serif">
         {title}
       </Typography>
       <Typography textAlign="justify" variant="h6">

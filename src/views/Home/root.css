@@ -147,24 +147,45 @@ body {
 .slider {
   display: block;
   width: 100%;
-  max-width: 800px;
+  max-width: 1600px;
   /* background: blue; */
   height: auto;
   margin: auto;
   overflow: hidden;
 }
-
-@media only screen and (max-width: 850px) {
+@media screen and (max-width: 1600px) {
   .slider {
-    display: block;
-    width: 300px;
-    max-width: 800px;
-    /* background: blue; */
-    height: auto;
-    margin: auto;
-    overflow: hidden;
+    width: 1400px;
   }
 }
+@media screen and (max-width: 1400px) {
+  .slider {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .slider {
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .slider {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .slider {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .slider {
+    width: 350px;
+  }
+}
+
 
 .slider .slide-track {
   display: flex;

@@ -15,8 +15,7 @@ const AboutMe = () => {
     translateX: [-100, 3, "easeOutQuint"],
   });
   const parallaxTwo = useParallax({
-    translateX: [300, -3, "easeOutQuint"]
-
+    translateX: [300, -3, "easeOutQuint"],
   });
   return (
     <div className="center full night-sky">
@@ -32,15 +31,7 @@ const AboutMe = () => {
         <Grid container spacing={2}>
           {/* Experience */}
           <Grid item xs={12} md={8} ref={parallax.ref}>
-            <Box
-              style={
-                {
-                  // background: "blue",
-                  // padding: 90,
-                  // boxSizing: "border-box",
-                }
-              }
-            >
+            <Box>
               <Typography variant="h3" mt={5}>
                 <FaFolder fontSize={40} /> Experiencia Laboral
               </Typography>
@@ -80,16 +71,7 @@ const AboutMe = () => {
           </Grid>
           {/* Skills */}
           <Grid item xs={12} md={4} ref={parallaxTwo.ref}>
-            <Box
-              sx={
-                {
-                  // background: "red",
-                  // padding: 90,
-                  // boxSizing: "border-box",
-                  // boxSizing: "border-box",
-                }
-              }
-            >
+            <Box>
               <Typography variant="h3" mt={5}>
                 <FaStarHalfAlt /> Habilidades
               </Typography>
@@ -106,133 +88,126 @@ const AboutMe = () => {
                   <li> Google Cloud</li>
                 </ul>
               </Typography>
-              <div className="slider">
-                <div className="slide-track">
-                  <div className="slide">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://www.mementotech.in/assets/images/icons/express.png"
-                      style={{ background: "white", borderRadius: "100%" }}
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img src={Htmlicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img src={Cssicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img src={JSicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src={GoogleCloudIcon}
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img src={postmanIcon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://www.mementotech.in/assets/images/icons/express.png"
-                      height="100"
-                      style={{ background: "white", borderRadius: "100%" }}
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img src={Htmlicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img src={Cssicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img src={JSicon} height="100" width="250" alt="" />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img
-                      src={GoogleCloudIcon}
-                      height="100"
-                      width="250"
-                      alt=""
-                    />
-                  </div>
-                  <div className="slide">
-                    <img src={postmanIcon} height="100" width="250" alt="" />
-                  </div>
+            </Box>
+          </Grid>
+          {/* Images */}
+          <Grid item xs={12} boxSizing='border-box'>
+            <div className="slider">
+              <div className="slide-track">
+                <div className="slide">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://www.mementotech.in/assets/images/icons/express.png"
+                    style={{ background: "white", borderRadius: "100%" }}
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img src={Htmlicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={Cssicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={JSicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img src={GoogleCloudIcon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={postmanIcon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/master/images/react-native-logo.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://www.mementotech.in/assets/images/icons/express.png"
+                    height="100"
+                    style={{ background: "white", borderRadius: "100%" }}
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img src={Htmlicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={Cssicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={JSicon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img
+                    src="https://www.databaseanalyser.com/wp-content/uploads/2022/01/MySQL-logo.png"
+                    height="100"
+                    width="250"
+                    alt=""
+                  />
+                </div>
+                <div className="slide">
+                  <img src={GoogleCloudIcon} height="100" width="250" alt="" />
+                </div>
+                <div className="slide">
+                  <img src={postmanIcon} height="100" width="250" alt="" />
                 </div>
               </div>
-            </Box>
+            </div>
           </Grid>
         </Grid>
       </Box>
