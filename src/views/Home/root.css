@@ -34,7 +34,7 @@ body {
 }
 .night-sky {
   background-image: url(../../assets/SkyNight.jpeg);
-  background-size: contain;
+  background-size: cover;
 }
 
 .center-one {
@@ -77,6 +77,24 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: 0.5s ease;
+}
+
+.social-icons2 a {
+  font-size: 20px;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 25px;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
   text-decoration: none;
   color: white;
   position: relative;

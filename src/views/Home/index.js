@@ -3,6 +3,7 @@ import { AdvancedBannerTop } from "./components/AdvancedBannerTop";
 import AboutMe from "./components/AboutMe";
 import "./root.css";
 import MyProyects from "./components/MyProyects";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <AdvancedBannerTop />
       <AboutMe />
       <MyProyects />
+      <Footer />
     </ParallaxProvider>
   );
 }
