@@ -5,7 +5,7 @@ import "./root.css";
 import MyProyects from "./components/MyProyects";
 import Footer from "./components/Footer";
 
-export default function App() {
+export default function Home() {
   return (
     <ParallaxProvider>
       <AdvancedBannerTop />
