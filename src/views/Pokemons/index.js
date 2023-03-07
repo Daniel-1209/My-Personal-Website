@@ -3,10 +3,14 @@ import axios from "axios";
 import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
+import { IconArrowBadgeLeft } from "@tabler/icons";
 
 const myStyles = makeStyles(() => ({
   bodyBox: {
     background: "#aea3ff",
+    minWidth: 500,
+    minHeight: 900,
     backgroundSize: " 320px",
     backgroundRepeat: "no-repeat",
     display: "flex",
@@ -42,8 +46,9 @@ const myStyles = makeStyles(() => ({
     margin: "auto",
     // background: "#deffe4",
     backgroundImage: `url(${"https://img.freepik.com/vector-premium/paisaje-dibujos-animados-vista-campos-verdes-verano-colina-cesped-primavera-cielo-azul_313905-688.jpg?w=2000"})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "180%",
+    // backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    // backgroundSize: "180%",
   },
   buttonA: {
     width: "4.3em",
@@ -254,13 +259,13 @@ const Pokemons = () => {
   const [pagination, setPagination] = useState(0);
   const [loadingImage, setLoadingImage] = useState(false);
   const [pokemonName, setPokemonName] = useState("");
-  const [haveError, setHaveError] = useState(true);
+  const [haveError, setHaveError] = useState(false);
 
   const styles = myStyles();
 
   const handelPokemon = async (link) => {
     setIdPokemon(idPokemon + 1);
-    console.log("cargando");
+    console.log("Buscando pokemon especifico");
     try {
       const config = {
         method: "get",
@@ -268,7 +273,8 @@ const Pokemons = () => {
         headers: {},
       };
       const response = await axios(config);
-      console.log(response.data);
+      // console.log(response.data);
+      setHaveError(false);
       setPokemonNow(response.data);
     } catch (e) {
       console.log(e);
@@ -288,7 +294,7 @@ const Pokemons = () => {
   };
 
   const handdleSearch = async (name) => {
-    console.log("Buscando");
+    console.log("Buscando por nombre pokemon");
     try {
       const config = {
         method: "get",
@@ -329,6 +335,21 @@ const Pokemons = () => {
 
   return (
     <Box className={styles.bodyBox}>
+      <Link to="/">
+        <IconArrowBadgeLeft
+          size={60}
+          color="white"
+          style={{
+            background:'#aea3ff',
+            borderRadius: '100%',
+            zIndex:10,
+            display: "inline-block",
+            position: "absolute",
+            top: 10,
+            left: 10,
+          }}
+        />
+      </Link>
       {/* Gameboy */}
       <Box className={styles.gameboyBody}>
         {/* Display */}
@@ -339,7 +360,17 @@ const Pokemons = () => {
                 {pokemonNow !== null ? (
                   <Box className={styles.boxDetailPokemon}>
                     {haveError ? (
-                      <p style={{color:'white', textAlign:'center'}}> Error al buscar tu pokemon </p>
+                      <p
+                        style={{
+                          color: "white",
+                          textAlign: "center",
+                          margin: "auto",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Error al buscar tu pokemon
+                        <br /> Oprime boton B para regresar
+                      </p>
                     ) : (
                       <>
                         <img

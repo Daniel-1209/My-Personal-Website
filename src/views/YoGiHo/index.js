@@ -5,6 +5,8 @@ import { makeStyles } from "@mui/styles";
 import background from "../../assets/backgroundYogiho.jpeg";
 import def from "../../assets/defensa.png";
 import atk from "../../assets/ataque.png";
+import { IconArrowBadgeLeft } from "@tabler/icons";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   boxCard: {
@@ -34,9 +36,10 @@ const useStyles = makeStyles((theme) => ({
   DetailBoxModal: {
     padding: 10,
     height: 750,
-    minWidth:335,
-    width:'50%',
-    marginLeft:'auto',marginRight:'auto',
+    minWidth: 335,
+    width: "50%",
+    marginLeft: "auto",
+    marginRight: "auto",
     background: "black",
     display: "flex",
     flexWrap: "wrap",
@@ -141,6 +144,18 @@ const YoGiHo = () => {
     >
       {/* Header */}
       <Grid item xs={12}>
+        <Link to="/">
+          <IconArrowBadgeLeft
+            size={60}
+            color="white"
+            style={{
+              display: "inline-block",
+              position: "absolute",
+              top: 10,
+              left: 10,
+            }}
+          />
+        </Link>
         <Box style={styles.headerBox}>
           <Typography
             variant="h4"

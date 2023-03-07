@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
+import { IconArrowBadgeLeft } from "@tabler/icons";
 
 const myStyles = makeStyles(() => ({
   boxBody: {
@@ -228,22 +230,37 @@ const TicTacToe = () => {
 
   return (
     <Box className={styles.boxBody}>
+      <Link to="/">
+        <IconArrowBadgeLeft
+          size={60}
+          color="white"
+          style={{
+            // background: "#aea3ff",
+            // borderRadius: "100%",
+            zIndex: 10,
+            display: "inline-block",
+            position: "absolute",
+            top: 27,
+            left: 10,
+          }}
+        />
+      </Link>
       <Box
         style={{
           marginTop: 20,
-          display: "flex",
-          justifyContent: "center",
-          width: "100%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "80%",
         }}
       >
         <Typography
           style={{
             color: "white",
+            fontFamily: "monospace",
             marginBottom: 50,
             textShadow:
               "0 0 20px blue, 0 0 30px blue, 0 0 30px blue,  0 0 30px blue",
           }}
-          fontFamily="monospace"
           variant="h2"
           align="center"
         >
@@ -344,7 +361,7 @@ const TicTacToe = () => {
                 align="center"
                 variant="h4"
               >
-                {`Numero De Partida => ${turn}`}
+                {`Número De Partida => ${turn}`}
               </Typography>
               <Box>
                 <Typography variant="h5">Puntos De X</Typography>

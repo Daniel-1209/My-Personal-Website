@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
+import { IconArrowBadgeLeft } from "@tabler/icons";
 
 const myStyles = makeStyles(() => ({
   center: {
@@ -232,6 +234,21 @@ const Calculator = () => {
 
   return (
     <Box className={styles.center}>
+      <Link to="/">
+        <IconArrowBadgeLeft
+          size={60}
+          color="#2bc7f7"
+          style={{
+            background: "white",
+            borderRadius: "100%",
+            zIndex: 10,
+            display: "inline-block",
+            position: "absolute",
+            top: 10,
+            left: 10,
+          }}
+        />
+      </Link>
       <Box className={styles.firstBox}>
         {/* Display */}
         <Box className={styles.displayOne}>
