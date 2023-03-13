@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Box, Button, Grid, Typography } from "@mui/material";
 import { ParallaxBanner } from "react-scroll-parallax";
 import perfilImage from "../../../assets/FB_IMG_1673920208879.jpeg";
-import { RiLinkedinBoxFill, RiGithubFill, RiMailFill } from "react-icons/ri";
+import { RiLinkedinBoxFill, RiGithubFill, RiMailFill, RiContactsFill } from "react-icons/ri";
 
 export const AdvancedBannerTop = () => {
+  const [displayTex, setDisplayTex] = useState(false);
   const background = {
     image:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/105988/banner-background.jpg",
@@ -22,13 +24,14 @@ export const AdvancedBannerTop = () => {
     children: (
       <div className="inset-one center-one">
         {/* NavBar */}
-        <Box style={{ width: "100%", height: 100 }} />
-        {/* <h3
-          style={{ marginTop: 0, marginBottom: 5 }}
-          className="headline white"
-        >
-          Hello World!
-        </h3> */}
+        <Box
+          sx={{
+            width: "100%",
+            height: { xs: 0, sm: 100 },
+            // background: "green",
+          }}
+        />
+
         <Grid
           container
           spacing={2}
@@ -89,12 +92,48 @@ export const AdvancedBannerTop = () => {
             </Box>
           </Grid>
           {/* My description */}
+          {/* Box text */}
+          <Box
+            sx={{
+              background:
+                "linear-gradient(0deg,rgba(0,0,0,1) 50%,  rgba(255,255,255,0) 100%)",
+              // borderRadius: 50,
+              display: { xs: displayTex ? "flex" : "none", sm: "none" },
+              position: "absolute",
+              flexWrap: "wrap",
+              alignContent: "center",
+              top: "50%",
+              left: "50%",
+              transform: " translate(-50%, -50%)",
+              width: "100%",
+              height: "100%",
+              padding: 5,
+              boxSizing: "border-box",
+            }}
+          >
+            <Typography
+              variant="h6"
+              color="white"
+              fontWeight={600}
+              textTransform="capitalize"
+              textAlign="justify"
+            >
+              Soy un desarrollador full-stack que le fascina la tecnología y los
+              retos de programación, en un lapso de un año he trabajado con
+              tecnologías para el desarrollo y mantenimiento de aplicaciones
+              Web, Android y IOS, así mismo durante mis estudios de bachillerato
+              participe en la Olimpiada Mexicana De Informática (OMI) en la cual
+              obtuve medalla de bronce lo cual me ayudo a fortalecer mi lógica
+              de programación.
+            </Typography>
+          </Box>
+          {/* Grid text */}
           <Grid
+            sx={{ display: { xs: "none", sm: "flex" } }}
             item
             xs={11}
             sm={6}
             md={6}
-            display="flex"
             justifyContent="center"
           >
             <Box
@@ -103,7 +142,7 @@ export const AdvancedBannerTop = () => {
                 //   "linear-gradient(0deg,rgba(0,0,0,1)  0%,  rgba(255,255,255,0) 100%)",
                 // borderRadius: 50,
                 width: "100%",
-                padding: 50,
+                padding: 10,
                 boxSizing: "border-box",
               }}
             >
@@ -166,6 +205,26 @@ export const AdvancedBannerTop = () => {
             </li> */}
           </ul>
         </Box>
+        {/* Button About me */}
+        <Button
+          variant="outlined"
+          style={{
+            borderColor: "white",
+            borderRadius: 100,
+            color: "white",
+            background: " rgba(0,0,0,0.5)",
+          }}
+          onClick={() => setDisplayTex(!displayTex)}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            position: "absolute",
+            right: 40,
+            top: 15,
+            zIndex: 10,
+          }}
+        >
+         <RiContactsFill/>
+        </Button>
       </div>
     ),
   };
