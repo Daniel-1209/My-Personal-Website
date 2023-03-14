@@ -8,76 +8,8 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { alpha, styled } from "@mui/material/styles";
-import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { IconArrowBadgeLeft } from "@tabler/icons";
-
-const myStyles = makeStyles(() => ({
-  boxBody: {
-    display: "flex",
-    flexWrap: "wrap",
-    background: "black",
-    minHeight: "100vh",
-    minWidth: "100vw",
-    flexDirection: "column",
-    alignContent: "center",
-    color: "white",
-    // justifyContent: "flex-start",
-  },
-  boxTicTac: {
-    // background: "green",
-    border: "2px solid white",
-    boxShadow: " inset 0 0 20px white",
-    height: 400,
-    width: 400,
-    display: "flex",
-    alignContent: "center",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
-  squareO: {
-    height: 100,
-    width: 100,
-    fontSize: 40,
-    fontWeight: 600,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "white",
-    textShadow:
-      "0 0 20px white, 0 0 40px white, 0 0 40px white,  0 0 40px white",
-    border: "2px solid white",
-    boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
-  },
-  squareX: {
-    height: 100,
-    width: 100,
-    fontSize: 40,
-    fontWeight: 600,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "white",
-    textShadow: "0 0 20px red, 0 0 40px red, 0 0 40px red,  0 0 40px red",
-    border: "2px solid white",
-    boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
-  },
-  squareSelected: {
-    height: 100,
-    width: 100,
-    background: "white",
-    border: "2px solid white",
-    boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
-    fontSize: 40,
-    fontWeight: 600,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "white",
-    textShadow: "0 0 20px blue, 0 0 40px blue, 0 0 40px blue,  0 0 40px blue",
-  },
-}));
 
 const TicTacToe = () => {
   const [mainTable, setMainTable] = useState([]);
@@ -88,7 +20,6 @@ const TicTacToe = () => {
   const [playerO, setPlayerO] = useState(0);
   const [playerX, setPlayerX] = useState(0);
   const [turn, setTurn] = useState(0);
-  const styles = myStyles();
   const columns = 3;
   const rows = 3;
   const table = [];
@@ -205,13 +136,52 @@ const TicTacToe = () => {
   const selectStyles = (cell, simbol) => {
     for (let i = 0; i < selectedCells.length; i += 1) {
       if (cell === selectedCells[i]) {
-        return styles.squareSelected;
+        return {
+          height: 100,
+          width: 100,
+          background: "white",
+          border: "2px solid white",
+          boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
+          fontSize: 40,
+          fontWeight: 600,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          textShadow:
+            "0 0 20px blue, 0 0 40px blue, 0 0 40px blue,  0 0 40px blue",
+        };
       }
     }
     if (simbol === "X") {
-      return styles.squareX;
+      return {
+        height: 100,
+        width: 100,
+        fontSize: 40,
+        fontWeight: 600,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        textShadow: "0 0 20px red, 0 0 40px red, 0 0 40px red,  0 0 40px red",
+        border: "2px solid white",
+        boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
+      };
     }
-    return styles.squareO;
+    return {
+      height: 100,
+      width: 100,
+      fontSize: 40,
+      fontWeight: 600,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "white",
+      textShadow:
+        "0 0 20px white, 0 0 40px white, 0 0 40px white,  0 0 40px white",
+      border: "2px solid white",
+      boxShadow: " inset 0 0 10px blue, 0 0 30px blue ",
+    };
   };
 
   const createTable = () => {
@@ -229,7 +199,19 @@ const TicTacToe = () => {
   };
 
   return (
-    <Box className={styles.boxBody}>
+    <Box
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        background: "black",
+        minHeight: "100vh",
+        minWidth: "100vw",
+        flexDirection: "column",
+        alignContent: "center",
+        color: "white",
+        // justifyContent: "flex-start",
+      }}
+    >
       <Link to="/">
         <IconArrowBadgeLeft
           size={60}
@@ -331,12 +313,24 @@ const TicTacToe = () => {
                 justifyContent: "center",
               }}
             >
-              <Box className={styles.boxTicTac}>
+              <Box
+                style={{
+                  // background: "green",
+                  border: "2px solid white",
+                  boxShadow: " inset 0 0 20px white",
+                  height: 400,
+                  width: 400,
+                  display: "flex",
+                  alignContent: "center",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
                 {mainTable.map((e, i) =>
                   e.map((o, j) => (
                     <Box
                       key={`${i}, ${j}`}
-                      className={selectStyles(`${i},${j}`, mainTable[i][j])}
+                      style={selectStyles(`${i},${j}`, mainTable[i][j])}
                       onClick={() => handdleIcon(i, j)}
                     >
                       {o}

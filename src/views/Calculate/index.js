@@ -1,122 +1,26 @@
 import React, { useState } from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
 import { IconArrowBadgeLeft } from "@tabler/icons";
 
-const myStyles = makeStyles(() => ({
-  center: {
-    minWidth: "100vw",
-    minHeight: "100vh",
-    // background: "#ffffff",
-    background: "#e4edeb",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  firstBox: {
-    width: "100%",
-    maxWidth: 800,
-    height: 600,
-    paddingTop: 20,
-    borderRadius: 20,
-    boxShadow:
-      "17px 17px 31px -1px rgba(0,0,0,0.26), -10px -10px 31px 1px rgba(255,255,255,1)",
-    background: "#e4edeb",
-    // background: "#ffffff",
-  },
-  displayOne: {
-    boxShadow:
-      "inset 10px 10px 12px -1px rgba(0,0,0,0.23),inset -10px -10px 12px 1px rgba(255,255,255,1)",
-    // background: "#ffffff",
-    background: "#e4edeb",
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: " 90%",
-    borderRadius: 10,
-    padding: 10,
-    boxSizing: "border-box",
-    marginBottom: 20,
-  },
-  display: {
-    width: " 100%",
-    height: 50,
-    // border: "1px solid black",
-    // background: "green",
-    display: "flex",
-    padding: 10,
-    boxSizing: "border-box",
-    alignItems: "center",
-    justifyContent: "right",
-    fontSize: 30,
-    fontFamily: "monospace",
-  },
-  panelButtons: {
-    // background: "pink",
-    display: "flex",
-    width: "90%",
-    height: 300,
-    marginLeft: "auto",
-    marginRight: "auto",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    flexDirection: "row",
-  },
-  bottonsRows: {
-    // background: "yellow",
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-around",
-  },
-  panelNumbers: {
-    // background: "purple",
-    width: "60%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    flexDirection: "column",
-    alignContent: "center",
-  },
-  panelOperators: {
-    // background: "green",
-    // width: "20%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    flexDirection: "column",
-    alignContent: "center",
-  },
-  buttonsExtra: {
-    // background: "purple",
-    // width: "20%",
-    display: "flex",
-    flexWrap: "wrap",
-    flexDirection: "column",
-    alignContent: "center",
-    justifyContent: "space-around",
-  },
-}));
-
-const stylesProp = {
-  buttonOpera: {
-    background: "white",
-    color: "black",
-    fontSize: 15,
-    fontWeight: 600,
-    boxShadow: "5px 5px 12px -1px rgba(0,0,0,0.23)",
-  },
-  buttonNum: {
-    background: "#2bc7f7",
-    color: "white",
-    // fontSize: 15,
-    fontWeight: 600,
-    boxShadow: "5px 5px 12px -1px rgba(0,0,0,0.23)",
-  },
-};
-
 const Calculator = () => {
-  const styles = myStyles();
+  const stylesProp = {
+    buttonOpera: {
+      background: "white",
+      color: "black",
+      fontSize: 15,
+      fontWeight: 600,
+      boxShadow: "5px 5px 12px -1px rgba(0,0,0,0.23)",
+    },
+    buttonNum: {
+      background: "#2bc7f7",
+      color: "white",
+      // fontSize: 15,
+      fontWeight: 600,
+      boxShadow: "5px 5px 12px -1px rgba(0,0,0,0.23)",
+    },
+  };
+
   const [textDisplay, setTextDisplay] = useState("  0");
   const [numTwo, setNumTwo] = useState(null);
   const [simbol, setSimbol] = useState("");
@@ -233,7 +137,18 @@ const Calculator = () => {
   };
 
   return (
-    <Box className={styles.center}>
+    <Box
+      sx={{
+        minWidth: "100vw",
+        minHeight: "100vh",
+        // background: "#ffffff",
+        background: "#e4edeb",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Link to="/">
         <IconArrowBadgeLeft
           size={60}
@@ -249,17 +164,104 @@ const Calculator = () => {
           }}
         />
       </Link>
-      <Box className={styles.firstBox}>
+      <Box
+        style={{
+          width: "100%",
+          maxWidth: 800,
+          height: 600,
+          paddingTop: 20,
+          borderRadius: 20,
+          boxShadow:
+            "17px 17px 31px -1px rgba(0,0,0,0.26), -10px -10px 31px 1px rgba(255,255,255,1)",
+          background: "#e4edeb",
+          // background: "#ffffff",
+        }}
+      >
         {/* Display */}
-        <Box className={styles.displayOne}>
-          <Box className={styles.display}>{textDisplay}</Box>
-          <Box className={styles.display}>{numTwo}</Box>
+        <Box
+          style={{
+            boxShadow:
+              "inset 10px 10px 12px -1px rgba(0,0,0,0.23),inset -10px -10px 12px 1px rgba(255,255,255,1)",
+            // background: "#ffffff",
+            background: "#e4edeb",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: " 90%",
+            borderRadius: 10,
+            padding: 10,
+            boxSizing: "border-box",
+            marginBottom: 20,
+          }}
+        >
+          <Box
+            style={{
+              width: " 100%",
+              height: 50,
+              // border: "1px solid black",
+              // background: "green",
+              display: "flex",
+              padding: 10,
+              boxSizing: "border-box",
+              alignItems: "center",
+              justifyContent: "right",
+              fontSize: 30,
+              fontFamily: "monospace",
+            }}
+          >
+            {textDisplay}
+          </Box>
+          <Box
+            style={{
+              width: " 100%",
+              height: 50,
+              // border: "1px solid black",
+              // background: "green",
+              display: "flex",
+              padding: 10,
+              boxSizing: "border-box",
+              alignItems: "center",
+              justifyContent: "right",
+              fontSize: 30,
+              fontFamily: "monospace",
+            }}
+          >
+            {numTwo}
+          </Box>
         </Box>
         {/* Buttons panel */}
-        <Box className={styles.panelButtons}>
+        <Box
+          style={{
+            // background: "pink",
+            display: "flex",
+            width: "90%",
+            height: 300,
+            marginLeft: "auto",
+            marginRight: "auto",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+            flexDirection: "row",
+          }}
+        >
           {/* Numbers */}
-          <Box className={styles.panelNumbers}>
-            <Box className={styles.bottonsRows}>
+          <Box
+            style={{
+              // background: "purple",
+              width: "60%",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              flexDirection: "column",
+              alignContent: "center",
+            }}
+          >
+            <Box
+              style={{
+                // background: "yellow",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
               <Button
                 style={stylesProp.buttonOpera}
                 variant="contained"
@@ -282,7 +284,14 @@ const Calculator = () => {
                 3
               </Button>
             </Box>
-            <Box className={styles.bottonsRows}>
+            <Box
+              style={{
+                // background: "yellow",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
               <Button
                 style={stylesProp.buttonOpera}
                 variant="contained"
@@ -305,7 +314,14 @@ const Calculator = () => {
                 6
               </Button>
             </Box>
-            <Box className={styles.bottonsRows}>
+            <Box
+              style={{
+                // background: "yellow",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
               <Button
                 style={stylesProp.buttonOpera}
                 variant="contained"
@@ -328,7 +344,14 @@ const Calculator = () => {
                 9
               </Button>
             </Box>
-            <Box className={styles.bottonsRows}>
+            <Box
+              style={{
+                // background: "yellow",
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
               <Button
                 style={stylesProp.buttonOpera}
                 variant="contained"
@@ -353,7 +376,17 @@ const Calculator = () => {
             </Box>
           </Box>
           {/* Operators */}
-          <Box className={styles.panelOperators}>
+          <Box
+            style={{
+              // background: "green",
+              // width: "20%",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-around",
+              flexDirection: "column",
+              alignContent: "center",
+            }}
+          >
             <Button
               style={stylesProp.buttonNum}
               variant="contained"
@@ -384,7 +417,17 @@ const Calculator = () => {
             </Button>
           </Box>
           {/* Buttons extra */}
-          <Box className={styles.buttonsExtra}>
+          <Box
+            style={{
+              // background: "purple",
+              // width: "20%",
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "column",
+              alignContent: "center",
+              justifyContent: "space-around",
+            }}
+          >
             <Button
               style={{
                 background: "#f82f93",
